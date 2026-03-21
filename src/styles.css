@@ -1,1 +1,26 @@
 @import "tailwindcss";
+
+:root {
+  --color-wine: #8B2323;
+  --color-cream: #F5EEDC;
+  --color-rose: #C48B8B;
+  --color-white: #FFFFFF;
+
+  --nav-glass: rgba(255, 255, 255, 0.12);
+  --nav-border: rgba(255, 255, 255, 0.18);
+  --nav-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
