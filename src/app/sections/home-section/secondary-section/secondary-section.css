@@ -15,7 +15,7 @@
 }
 
 .secondary-section__card {
-  width: min(1280px, 100%);
+  width: min(1570px, 100%);
   background: rgba(245, 238, 220, 0.96);
   border: 1px solid rgba(139, 35, 35, 0.06);
   border-radius: 2.8rem;
