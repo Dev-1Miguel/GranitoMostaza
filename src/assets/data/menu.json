@@ -187,7 +187,7 @@
         },
         {
         "id": 7,
-        "name": "Tigrillo Zarumeño",
+        "name": "Tigrillo",
         "description": "Plátano verde majado con huevo, queso y un toque de refrito tradicional.",
         "price": 5.25,
         "image": "xxxxxxxxx"
@@ -222,20 +222,13 @@
         },
         {
         "id": 12,
-        "name": "Hayaca de Pollo",
-        "description": "Envuelto de maíz con un guiso tradicional de pollo, aceitunas y pasas.",
-        "price": 3.25,
-        "image": "xxxxxxxxx"
-        },
-        {
-        "id": 13,
         "name": "Tortilla de Maíz con Queso",
         "description": "Tortillas asadas a la plancha rellenas de abundante queso criollo.",
         "price": 2.75,
         "image": "xxxxxxxxx"
         },
         {
-        "id": 14,
+        "id": 13,
         "name": "Empanada de Viento",
         "description": "Gran empanada frita rellena de queso y espolvoreada con un toque de azúcar.",
         "price": 2.00,
@@ -337,13 +330,6 @@
         },
         {
         "id": 14,
-        "name": "Infusión de Frutos Amarillos",
-        "description": "Mezcla frutal de piña, mango y maracuyá sin teína.",
-        "price": 2.50,
-        "image": "xxxxxxxxx"
-        },
-        {
-        "id": 15,
         "name": "Batido de Chocolate y Guineo",
         "description": "Cremoso batido con banano maduro y cacao fino de aroma.",
         "price": 3.80,
