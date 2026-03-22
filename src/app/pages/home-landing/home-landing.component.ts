@@ -5,12 +5,13 @@ import { SecondarySectionComponent } from "../../sections/home-section/secondary
 import { ThirdSectionComponent } from "../../sections/home-section/third-section/third-section";
 import { FourthSectionComponent } from "../../sections/home-section/fourth-section/fourth-section";
 import { FooterComponent } from "../../components/footer/footer.component";
+import { FloatingHomeButtonComponent } from "../../components/floating-home-button/floating-home-button.component";
 
 @Component({
     selector: 'app-home-landing',
     templateUrl: './home-landing.component.html',
     styleUrl: './home-landing.component.css',
-    imports: [NavbarComponent, MainSectionComponent, SecondarySectionComponent, ThirdSectionComponent, FourthSectionComponent, FooterComponent],
+    imports: [NavbarComponent, MainSectionComponent, SecondarySectionComponent, ThirdSectionComponent, FourthSectionComponent, FooterComponent, FloatingHomeButtonComponent],
     standalone: true
 })
 export class HomeLandingComponent {
