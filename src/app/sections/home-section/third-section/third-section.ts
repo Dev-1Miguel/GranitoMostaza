@@ -1,19 +1,19 @@
-import { NgFor } from "@angular/common";
-import { Component, inject } from "@angular/core";
-import { Product } from "./models/product.interfaces";
+import { Component, OnInit, inject } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { MenuData } from "./models/menudata.interfaces";
 
+import { Product } from "../../../models/product.interfaces";
+import { MenuData } from "../../../models/menudata.interfaces";
+import { MenuCategoryComponent } from "../../../components/menu-category/menu-category.component";
 
 @Component({
-    selector: 'app-third-section',
-    templateUrl: './third-section.html',
-    styleUrls: ['./third-section.css'],
-    imports: [NgFor],
-    standalone: true,
+  selector: "app-third-section",
+  standalone: true,
+  imports: [MenuCategoryComponent],
+  templateUrl: "./third-section.html",
+  styleUrls: ["./third-section.css"],
 })
-export class ThirdSectionComponent {
+export class ThirdSectionComponent implements OnInit {
   private http = inject(HttpClient);
 
   cart: Product[] = [];
@@ -38,20 +38,8 @@ export class ThirdSectionComponent {
     return this.http.get<MenuData>("assets/data/menu.json");
   }
 
-  scroll(container: HTMLElement, direction: "left" | "right") {
-    const amount = 340;
-    container.scrollBy({
-      left: direction === "left" ? -amount : amount,
-      behavior: "smooth",
-    });
-  }
-
-  addToCart(product: Product) {
+  addToCart(product: Product): void {
     this.cart.push(product);
     this.cartCount = this.cart.length;
-  }
-
-  trackById(index: number, item: Product) {
-    return item.id;
   }
 }
