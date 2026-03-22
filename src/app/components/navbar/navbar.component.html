@@ -1,7 +1,12 @@
 <header class="navbar">
   <nav class="navbar__inner">
-    <a href="#" class="navbar__logo">CREATIVO</a>
-
+    <a href="#home" class="navbar__logo" aria-label="Granito de Mostaza">
+      <img
+        src="/logoMinimalista.png"
+        alt="Granito de Mostaza"
+        class="navbar__logo-img"
+      />
+    </a>
     <ul class="navbar__menu">
       <li><a href="#home">Inicio</a></li>
       <li><a href="#about">Menu</a></li>
@@ -9,7 +14,10 @@
     </ul>
 
     <div class="navbar__actions">
-      <button class="navbar__cart" type="button">Carrito</button>
+      <button class="navbar__cart" type="button">
+        <i class="pi pi-shopping-cart navbar__cart-icon" aria-hidden="true"></i>
+        <span>Carrito</span>
+      </button>
     </div>
   </nav>
 </header>

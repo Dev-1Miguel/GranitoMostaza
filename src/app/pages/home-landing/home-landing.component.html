@@ -1,14 +1,19 @@
-<div class="navbar-wrapper">
-  <app-navbar></app-navbar>
+<div class="home-landing">
+  <div class="home-landing__pattern" aria-hidden="true"></div>
+
+  <div class="home-landing__content">
+    <div class="navbar-wrapper">
+      <app-navbar></app-navbar>
+    </div>
+
+    <main class="main-content">
+      <app-main-section></app-main-section>
+      <app-secondary-section></app-secondary-section>
+      <app-third-section></app-third-section>
+      <app-fourth-section></app-fourth-section>
+    </main>
+
+    <app-footer></app-footer>
+    <app-floating-home-button></app-floating-home-button>
+  </div>
 </div>
-
-<main class="main-content">
-  <app-main-section></app-main-section>
-  <app-secondary-section></app-secondary-section>
-  <app-third-section></app-third-section>
-  <app-fourth-section></app-fourth-section>
-</main>
-
-<app-footer></app-footer>
-
-<app-floating-home-button></app-floating-home-button>

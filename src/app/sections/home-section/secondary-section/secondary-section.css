@@ -3,9 +3,11 @@
 }
 
 .secondary-section {
+  position: relative;
+  z-index: 1;
   min-height: 100vh;
   width: 100%;
-  background: #ffffff;
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,7 +16,8 @@
 
 .secondary-section__card {
   width: min(1280px, 100%);
-  background: var(--color-cream, #F5EEDC);
+  background: rgba(245, 238, 220, 0.96);
+  border: 1px solid rgba(139, 35, 35, 0.06);
   border-radius: 2.8rem;
   padding: clamp(2rem, 3vw, 3.5rem);
   display: grid;
@@ -23,6 +26,8 @@
   gap: clamp(1.5rem, 3vw, 3rem);
   box-shadow: 0 16px 40px rgba(40, 20, 10, 0.06);
   overflow: hidden;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
 }
 
 .secondary-section__content {

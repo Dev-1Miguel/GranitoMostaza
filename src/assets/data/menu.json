@@ -19,14 +19,14 @@
         "name": "Tarta de Manzana Rústica",
         "description": "Clásica receta artesanal con manzanas caramelizadas y un toque de canela.",
         "price": 3.75,
-        "image": "assets/images/desserts/tartaletasManzanaRustica.jpg"
+        "image": "assets/images/desserts/tartaManzanaRustica.jpg"
         },
         {
         "id": 4,
         "name": "Tarta de Zanahoria (Carrot Cake)",
         "description": "Bizcocho húmedo de especias y nueces con frosting de queso crema.",
         "price": 4.25,
-        "image": "assets/images/desserts/tartaletasZanahoria.jpg"
+        "image": "assets/images/desserts/tartaZanahoria.jpg"
         },
         {
         "id": 5,

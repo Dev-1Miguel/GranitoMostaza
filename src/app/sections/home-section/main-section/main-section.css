@@ -7,18 +7,19 @@
   justify-content: center;
   padding: 120px 24px 40px;
   overflow: hidden;
-
+  isolation: isolate;
   background:
-    radial-gradient(circle at 18% 22%, rgba(196, 139, 139, 0.14) 0%, transparent 26%),
-    radial-gradient(circle at 82% 18%, rgba(196, 139, 139, 0.10) 0%, transparent 22%),
-    radial-gradient(circle at 75% 78%, rgba(139, 35, 35, 0.05) 0%, transparent 20%),
-    radial-gradient(circle at 22% 82%, rgba(255, 255, 255, 0.45) 0%, transparent 18%),
+    radial-gradient(circle at 18% 22%, rgba(196, 139, 139, 0.1) 0%, transparent 24%),
+    radial-gradient(circle at 82% 18%, rgba(196, 139, 139, 0.08) 0%, transparent 22%),
+    radial-gradient(circle at 75% 78%, rgba(139, 35, 35, 0.04) 0%, transparent 18%),
+    radial-gradient(circle at 22% 82%, rgba(255, 255, 255, 0.38) 0%, transparent 16%),
     linear-gradient(135deg, #f8f2e7 0%, #f5eedc 45%, #efe5d8 100%);
 }
 
 .main-section__overlay {
   position: absolute;
   inset: 0;
+  z-index: 0;
   background:
     linear-gradient(
       to bottom,
@@ -28,16 +29,84 @@
     );
 }
 
+.main-section__pattern {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.main-section__shape {
+  position: absolute;
+  transition: transform 220ms ease-out;
+  will-change: transform;
+}
+
+.main-section__shape-inner {
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+}
+
+.shape-svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: rgba(122, 36, 36, 0.8);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.float-a {
+  animation: floatA 7s ease-in-out infinite;
+}
+
+.float-b {
+  animation: floatB 8.5s ease-in-out infinite;
+}
+
+.float-c {
+  animation: floatC 10s ease-in-out infinite;
+}
+
+@keyframes floatA {
+  0%, 100% {
+    transform: translateY(0) rotate(var(--base-rotate, 0deg));
+  }
+  50% {
+    transform: translateY(-12px) rotate(var(--base-rotate, 0deg));
+  }
+}
+
+@keyframes floatB {
+  0%, 100% {
+    transform: translateY(0) rotate(var(--base-rotate, 0deg));
+  }
+  50% {
+    transform: translateY(10px) rotate(var(--base-rotate, 0deg));
+  }
+}
+
+@keyframes floatC {
+  0%, 100% {
+    transform: translateY(0) rotate(var(--base-rotate, 0deg));
+  }
+  50% {
+    transform: translateY(-8px) rotate(var(--base-rotate, 0deg));
+  }
+}
+
 .main-section__content {
   position: relative;
   z-index: 2;
-  max-width: 900px;
+  max-width: 920px;
   text-align: center;
   color: #3a2a26;
 }
 
 .main-section__eyebrow {
-  margin: 0 0 12px;
+  margin: 0 0 14px;
   font-size: 1rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -47,28 +116,28 @@
 
 .main-section__title {
   margin: 0 0 20px;
-  font-size: clamp(2.5rem, 6vw, 5.5rem);
-  line-height: 1;
-  letter-spacing: 0.06em;
+  font-size: clamp(3rem, 7vw, 6.4rem);
+  line-height: 0.95;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #2b1d1a;
 }
 
 .main-section__text {
   margin: 0 auto;
-  max-width: 720px;
+  max-width: 760px;
   font-size: clamp(1rem, 2vw, 1.15rem);
-  line-height: 1.7;
+  line-height: 1.75;
   color: #6b5852;
 }
 
 .main-section__actions {
-  margin-top: 32px;
+  margin-top: 34px;
 }
 
 .main-section__btn {
   border: 1px solid rgba(139, 35, 35, 0.18);
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.62);
   color: #8b2323;
   padding: 14px 28px;
   border-radius: 10px;
@@ -77,10 +146,46 @@
   cursor: pointer;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-  transition: transform 0.2s ease, background 0.25s ease;
+  transition: transform 0.2s ease, background 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 10px 28px rgba(48, 24, 18, 0.08);
 }
 
 .main-section__btn:hover {
   transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.82);
+}
+
+@media (max-width: 980px) {
+  .main-section {
+    padding-top: 140px;
+  }
+
+  .main-section__shape:nth-child(n + 9) {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .main-section {
+    padding: 120px 18px 28px;
+  }
+
+  .main-section__shape:nth-child(n + 7) {
+    display: none;
+  }
+
+  .main-section__eyebrow {
+    font-size: 0.9rem;
+    letter-spacing: 0.18em;
+  }
+
+  .main-section__text {
+    max-width: 95%;
+    line-height: 1.65;
+  }
+
+  .main-section__btn {
+    width: 100%;
+    max-width: 220px;
+  }
 }
