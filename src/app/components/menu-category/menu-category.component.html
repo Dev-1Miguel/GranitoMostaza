@@ -1,0 +1,116 @@
+<div>
+  <div class="mb-8 flex flex-col items-center gap-2">
+    <h3
+      class="text-center text-[#6d3b47] text-[2.9rem] leading-[1.15] md:text-[4rem]"
+    >
+      {{ title }}
+    </h3>
+
+    <svg
+      class="mt-1 h-5 w-28 md:h-6 md:w-32"
+      viewBox="0 0 200 40"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <path
+        d="M8 20C24 20 28 8 38 8C46 8 50 16 50 20C50 24 46 32 38 32C28 32 24 20 8 20Z"
+        stroke="#6d3b47"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M192 20C176 20 172 8 162 8C154 8 150 16 150 20C150 24 154 32 162 32C172 32 176 20 192 20Z"
+        stroke="#6d3b47"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M60 20H140"
+        stroke="#6d3b47"
+        stroke-width="2.5"
+        stroke-linecap="round"
+      />
+      <path
+        d="M100 20C100 20 92 14 92 8C92 4 95 2 98 2C101 2 103 5 103 8C103 14 100 20 100 20Z"
+        stroke="#6d3b47"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M100 20C100 20 108 14 108 8C108 4 105 2 102 2C99 2 97 5 97 8C97 14 100 20 100 20Z"
+        stroke="#6d3b47"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </div>
+
+  <div class="relative mt-6">
+    <button
+      type="button"
+      (click)="scroll('left')"
+      class="absolute left-2 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-[#d8c1af] bg-white text-xl text-[#6d3b47] shadow-md transition hover:bg-[#f7efe6] md:hidden"
+      [attr.aria-label]="'Desplazar ' + title + ' a la izquierda'"
+    >
+      ‹
+    </button>
+
+    <div
+      #track
+      class="flex items-stretch gap-6 overflow-x-auto overflow-y-visible scroll-smooth snap-x snap-mandatory pb-6 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+    >
+      <article
+        *ngFor="let item of items; trackBy: trackById"
+        class="flex min-w-[280px] max-w-[280px] shrink-0 snap-start flex-col rounded-[28px] border border-[#e9ddd0] bg-white shadow-md sm:min-w-[300px] sm:max-w-[300px]"
+      >
+        <div class="h-52 w-full overflow-hidden rounded-t-[28px] bg-[#f8f1e7]">
+          <img
+            [src]="item.image"
+            [alt]="item.name"
+            class="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+          />
+        </div>
+
+        <div class="flex flex-1 flex-col gap-4 p-6">
+          <div class="flex items-start justify-between gap-3">
+            <h4 class="text-[1.05rem] font-semibold leading-snug text-[#6d3b47]">
+              {{ item.name }}
+            </h4>
+
+            <span
+              class="whitespace-nowrap rounded-full bg-[#f4e6d8] px-3 py-1 text-sm font-semibold text-[#6d3b47]"
+            >
+              $ {{ item.price }}
+            </span>
+          </div>
+
+          <p class="text-sm leading-6 text-[#5f5a56]">
+            {{ item.description }}
+          </p>
+
+          <button
+            type="button"
+            (click)="addToCart(item)"
+            class="mt-auto w-full rounded-full bg-[#6d3b47] px-4 py-3 text-sm font-medium text-white transition duration-300 hover:bg-[#5a2f3a]"
+          >
+            Agregar al carrito
+          </button>
+        </div>
+      </article>
+    </div>
+
+    <button
+      type="button"
+      (click)="scroll('right')"
+      class="absolute right-2 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-[#d8c1af] bg-white text-xl text-[#6d3b47] shadow-md transition hover:bg-[#f7efe6] md:hidden"
+      [attr.aria-label]="'Desplazar ' + title + ' a la derecha'"
+    >
+      ›
+    </button>
+  </div>
+</div>
