@@ -18,8 +18,8 @@
   width: min(1570px, 100%);
   background: rgba(245, 238, 220, 0.96);
   border: 1px solid rgba(139, 35, 35, 0.06);
-  border-radius: 2.8rem;
-  padding: clamp(2rem, 3vw, 3.5rem);
+  border-radius: 2.2rem;
+  padding: clamp(1rem, 1.5vw, 1.5rem);
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
   align-items: center;
@@ -32,6 +32,8 @@
 
 .secondary-section__content {
   max-width: 520px;
+  justify-self: center;
+  padding-left: clamp(1rem, 4vw, 3rem);
 }
 
 .secondary-section__eyebrow {
@@ -72,7 +74,7 @@
   width: min(100%, 620px);
   aspect-ratio: 1.18 / 1;
   object-fit: cover;
-  border-radius: 3rem;
+  border-radius: 1.5rem;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
   background: #efe8d7;
 }
@@ -108,6 +110,8 @@
   .secondary-section__content {
     max-width: 100%;
     order: 2;
+    padding-left: 0;
+    justify-self: start;
   }
 
   .secondary-section__media {

@@ -5,5 +5,12 @@ export const routes: Routes = [
     {
         path: '',
         component: HomeLandingComponent
+    },
+    {
+        path: 'menu',
+        loadComponent: () =>
+            import('./pages/menu-landing/menu-landing.component').then(
+                (m) => m.MenuLandingComponent
+            )
     }
 ];
