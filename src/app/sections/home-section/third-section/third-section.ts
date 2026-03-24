@@ -5,11 +5,12 @@ import { Observable } from "rxjs";
 import { Product } from "../../../models/product.interfaces";
 import { MenuData } from "../../../models/menudata.interfaces";
 import { MenuCategoryComponent } from "../../../components/menu-category/menu-category.component";
+import { FadeInDirective } from "../../../directives/fade-in.directive";
 
 @Component({
   selector: "app-third-section",
   standalone: true,
-  imports: [MenuCategoryComponent],
+  imports: [MenuCategoryComponent, FadeInDirective],
   templateUrl: "./third-section.html",
   styleUrls: ["./third-section.css"],
 })

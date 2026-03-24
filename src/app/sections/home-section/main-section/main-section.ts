@@ -1,5 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
+import { FadeInDirective } from "../../../directives/fade-in.directive";
 
 type ShapeType = "cupcake" | "lollipop" | "candy" | "cake" | "donut" | "roll";
 
@@ -20,7 +21,7 @@ interface DecorativeItem {
   templateUrl: "./main-section.html",
   styleUrl: "./main-section.css",
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FadeInDirective],
 })
 export class MainSectionComponent {
   pointerX = 0;
