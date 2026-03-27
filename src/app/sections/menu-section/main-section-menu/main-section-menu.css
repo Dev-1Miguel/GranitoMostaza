@@ -1,0 +1,46 @@
+.carousel-container {
+    mask-image: linear-gradient(to right, transparent, black 1%, black 99%, transparent);
+}
+
+.carousel-track {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ken-burns {
+    animation: kenburns 20s ease infinite alternate;
+}
+
+@keyframes kenburns {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.15);
+    }
+}
+
+.carousel-slide {
+    perspective: 1000px;
+}
+
+.nav-btn:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.image-wrapper img {
+    will-change: transform;
+}
+
+.active-dot {
+    width: 2rem; /* 32px */
+    background-color: #f59e0b; /* amber-500 */
+}
+
+.inactive-dot {
+    width: 0.5rem; /* 8px */
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.content-fade {
+    will-change: transform, opacity;
+}

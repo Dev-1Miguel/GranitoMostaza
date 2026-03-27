@@ -1,0 +1,41 @@
+:host {
+    display: block;
+    background-color: transparent;
+}
+
+section {
+    contain: content;
+}
+
+/* Custom Scroll for cards if needed, but currently using grid */
+
+.font-serif {
+    font-family: 'Playfair Display', serif; /* Or any premium serif font */
+}
+
+/* Premium Card Effects */
+article {
+    backface-visibility: hidden;
+    will-change: transform, shadow;
+}
+
+article:hover {
+    transform: translateY(-8px);
+}
+
+/* Image Shimmer or Glow */
+.bg-shimmer {
+    background: linear-gradient(90deg, #f9f3ee 25%, #fff 50%, #f9f3ee 75%);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Button Micro-interactions */
+button:active {
+    transform: scale(0.98);
+}

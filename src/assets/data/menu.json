@@ -89,7 +89,7 @@
         "name": "Mousse de Chocolate 70%",
         "description": "Copa de mousse ligera de chocolate oscuro con virutas de cacao.",
         "price": 4.75,
-        "image": "assets/images/desserts/mousseChocolate70.jpg"
+        "image": "assets/images/desserts/mousseChocolate.jpg"
         },
         {
         "id": 14,
@@ -334,6 +334,21 @@
         "description": "Cremoso batido con banano maduro y cacao fino de aroma.",
         "price": 3.80,
         "image": "assets/images/drinks/batidoChocolateGuineo.jpg"
+        }
+    ],
+
+    "carouselItems": [
+        {
+            "id": 1,
+            "title": "Plato del Día",
+            "image": "assets/images/ads/Promo.png",
+            "description": "Plato del día"
+        },
+        {
+            "id": 2,
+            "title": "Nuestros Postres",
+            "image": "assets/images/ads/Contrafondo.jpg",
+            "description": "Descubre nuestra selección de postres artesanales"
         }
     ]
 }

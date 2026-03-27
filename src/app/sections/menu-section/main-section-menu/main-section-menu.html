@@ -1,0 +1,85 @@
+<div class="carousel-container relative mx-auto w-full max-w-[90rem] overflow-hidden rounded-3xl bg-neutral-900 shadow-2xl">
+  <!-- Slides Wrap -->
+  <div
+    class="carousel-track flex transition-transform duration-1600"
+    [style.transform]="translateX()"
+  >
+    @for (item of items(); track item.id; let i = $index) {
+      <div class="carousel-slide relative w-full shrink-0 overflow-hidden">
+        <!-- Premium Image with Ken Burns Effect -->
+        <div class="image-wrapper h-[500px] md:h-[650px] lg:h-[720px] overflow-hidden">
+          <img
+            [src]="item.image"
+            [alt]="item.title"
+            class="h-full w-full object-cover transition-transform duration-[15000ms] ease-linear"
+            [class.ken-burns]="currentIndex() === i"
+          />
+        </div>
+
+        <!-- Sophisticated Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+
+        <!-- Content with Glassmorphic feel -->
+        <div class="absolute bottom-0 left-0 w-full p-8 md:p-12 text-white">
+          <div class="content-fade max-w-2xl transform transition-all duration-700 delay-300"
+               [style.transform]="currentIndex() === i ? 'translateY(0)' : 'translateY(40px)'"
+               [style.opacity]="currentIndex() === i ? '1' : '0'">
+            <span class="mb-2 block text-sm font-bold uppercase tracking-wider text-amber-400">
+              Destacado
+            </span>
+            <h2 class="text-3xl font-extrabold md:text-6xl mb-4 leading-tight">
+              {{ item.title }}
+            </h2>
+            <p class="text-lg md:text-xl text-gray-200 line-clamp-2 font-light">
+              {{ item.description }}
+            </p>
+          </div>
+        </div>
+      </div>
+    } @empty {
+      <div class="flex h-[400px] w-full items-center justify-center text-white md:h-[550px]">
+        <div class="text-center">
+          <i class="pi pi-spinner pi-spin text-4xl mb-4 opacity-50"></i>
+          <p class="text-xl">Cargando sugerencias...</p>
+        </div>
+      </div>
+    }
+  </div>
+
+  <!-- Navigation Controls -->
+  @if (items().length > 1) {
+    <div class="controls-wrapper">
+      <button
+        type="button"
+        (click)="prev(); $event.stopPropagation()"
+        class="nav-btn absolute left-6 top-1/2 -translate-y-1/2 flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-md transition-all hover:bg-white/20 active:scale-95 border border-white/20"
+        aria-label="Anterior"
+      >
+        <span class="text-2xl">‹</span>
+      </button>
+
+      <button
+        type="button"
+        (click)="next(); $event.stopPropagation()"
+        class="nav-btn absolute right-6 top-1/2 -translate-y-1/2 flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-md transition-all hover:bg-white/20 active:scale-95 border border-white/20"
+        aria-label="Siguiente"
+      >
+        <span class="text-2xl">›</span>
+      </button>
+
+      <!-- Premium Pagination Dots -->
+      <div class="absolute bottom-8 left-1/2 flex -translate-x-1/2 gap-3 p-2 rounded-full bg-black/20 backdrop-blur-sm border border-white/10">
+        @for (item of items(); track item.id; let i = $index) {
+          <button
+            type="button"
+            (click)="goTo(i)"
+            class="h-2 rounded-full transition-all duration-300"
+            [class.active-dot]="currentIndex() === i"
+            [class.inactive-dot]="currentIndex() !== i"
+            [title]="item.title"
+          ></button>
+        }
+      </div>
+    </div>
+  }
+</div>

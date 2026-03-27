@@ -1,0 +1,27 @@
+:host {
+    display: block;
+    background-color: transparent;
+}
+
+section {
+    contain: content;
+}
+
+.font-serif {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Premium Card Effects */
+article {
+    backface-visibility: hidden;
+    will-change: transform, shadow;
+}
+
+article:hover {
+    transform: translateY(-8px);
+}
+
+/* Button Micro-interactions */
+button:active {
+    transform: scale(0.98);
+}
