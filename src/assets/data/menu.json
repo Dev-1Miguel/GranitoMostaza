@@ -341,13 +341,13 @@
         {
             "id": 1,
             "title": "Plato del Día",
-            "image": "assets/images/ads/Promodesayuno.png",
+            "image": "assets/images/ads/PromoDesayuno.jpg",
             "description": "Plato del día"
         },
         {
             "id": 2,
             "title": "Nuestros Postres",
-            "image": "assets/images/ads/Promo.png",
+            "image": "assets/images/ads/PromoPostre.jpg",
             "description": "Descubre nuestra selección de postres artesanales"
         }
     ]
