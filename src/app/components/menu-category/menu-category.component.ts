@@ -6,8 +6,10 @@ import {
   Input,
   Output,
   ViewChild,
+  inject
 } from "@angular/core";
 import { Product } from "../../models/product.interfaces";
+import { CartService } from "../../services/cart.service";
 
 @Component({
   selector: "app-menu-category",
@@ -22,7 +24,11 @@ export class MenuCategoryComponent {
 
   @Output() itemAdded = new EventEmitter<Product>();
 
+  private cartService = inject(CartService);
+
   @ViewChild("track", { static: false }) trackRef!: ElementRef<HTMLDivElement>;
+
+  animatingItems = new Set<number>();
 
   scroll(direction: "left" | "right"): void {
     if (!this.trackRef?.nativeElement) return;
@@ -33,8 +39,22 @@ export class MenuCategoryComponent {
     });
   }
 
+  getQuantity(productId: number): number {
+    return this.cartService.getItemQuantity(productId);
+  }
+
   addToCart(item: Product): void {
     this.itemAdded.emit(item);
+    
+    // Trigger local animation
+    this.animatingItems.add(item.id);
+    setTimeout(() => {
+      this.animatingItems.delete(item.id);
+    }, 500);
+  }
+
+  isAnimating(itemId: number): boolean {
+    return this.animatingItems.has(itemId);
   }
 
   trackById(index: number, item: Product): number {

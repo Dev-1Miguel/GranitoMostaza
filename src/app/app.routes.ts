@@ -12,5 +12,13 @@ export const routes: Routes = [
             import('./pages/menu-landing/menu-landing.component').then(
                 (m) => m.MenuLandingComponent
             )
+    },
+    {
+        path: 'shopping-cart-landing',
+        loadComponent: () =>
+            import('./pages/shopping-cart-landing/shopping-cart-landing.component').then(
+                (m) => m.ShoppingCartLandingComponent
+            )
     }
+
 ];

@@ -6,6 +6,7 @@ import { Product } from "../../../models/product.interfaces";
 import { MenuData } from "../../../models/menudata.interfaces";
 import { MenuCategoryComponent } from "../../../components/menu-category/menu-category.component";
 import { FadeInDirective } from "../../../directives/fade-in.directive";
+import { CartService } from "../../../services/cart.service";
 
 @Component({
   selector: "app-third-section",
@@ -16,9 +17,7 @@ import { FadeInDirective } from "../../../directives/fade-in.directive";
 })
 export class ThirdSectionComponent implements OnInit {
   private http = inject(HttpClient);
-
-  cart: Product[] = [];
-  cartCount = 0;
+  private cartService = inject(CartService);
 
   postres: Product[] = [];
   desayunos: Product[] = [];
@@ -40,7 +39,6 @@ export class ThirdSectionComponent implements OnInit {
   }
 
   addToCart(product: Product): void {
-    this.cart.push(product);
-    this.cartCount = this.cart.length;
+    this.cartService.addToCart(product);
   }
 }

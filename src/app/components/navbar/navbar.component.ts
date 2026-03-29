@@ -1,6 +1,7 @@
-import { Component } from "@angular/core";
+import { Component, inject } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
+import { CartService } from "../../services/cart.service";
 
 @Component({
     selector: 'app-navbar',
@@ -10,5 +11,10 @@ import { RouterModule } from "@angular/router";
     standalone: true
 })
 export class NavbarComponent {
+    private cartService = inject(CartService);
+    cartCount = this.cartService.totalItems;
 
+    toggleCart(): void {
+        this.cartService.toggleCart();
+    }
 }

@@ -2,6 +2,7 @@ import { Component, inject, signal, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Product } from '../../../models/product.interfaces';
+import { CartService } from '../../../services/cart.service';
 
 @Component({
   selector: 'app-third-section-menu',
@@ -12,6 +13,7 @@ import { Product } from '../../../models/product.interfaces';
 })
 export class ThirdSectionMenuComponent implements OnInit {
   private readonly http = inject(HttpClient);
+  private cartService = inject(CartService);
   private readonly dataUrl = 'assets/data/menu.json';
 
   allDesayunos = signal<Product[]>([]);
@@ -42,6 +44,22 @@ export class ThirdSectionMenuComponent implements OnInit {
   }
 
   onAddToCart(product: Product): void {
-    console.log('Product added to cart:', product);
+    this.cartService.addToCart(product);
+    this.triggerAnimation(product.id);
+  }
+
+  getQuantity(productId: number): number {
+    return this.cartService.getItemQuantity(productId);
+  }
+
+  private animatingItems = new Set<number>();
+
+  private triggerAnimation(itemId: number): void {
+    this.animatingItems.add(itemId);
+    setTimeout(() => this.animatingItems.delete(itemId), 500);
+  }
+
+  isAnimating(itemId: number): boolean {
+    return this.animatingItems.has(itemId);
   }
 }
