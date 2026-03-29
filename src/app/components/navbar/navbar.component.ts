@@ -13,8 +13,18 @@ import { CartService } from "../../services/cart.service";
 export class NavbarComponent {
     private cartService = inject(CartService);
     cartCount = this.cartService.totalItems;
+    isMenuOpen = false;
 
     toggleCart(): void {
         this.cartService.toggleCart();
+        this.isMenuOpen = false; // Cierra el menú si se abre el carrito
+    }
+
+    toggleMenu(): void {
+        this.isMenuOpen = !this.isMenuOpen;
+    }
+
+    closeMenu(): void {
+        this.isMenuOpen = false;
     }
 }

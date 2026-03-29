@@ -132,7 +132,38 @@
   }
 
   .navbar__menu {
-    display: none;
+    position: fixed;
+    top: 5.5rem;
+    left: 1.25rem;
+    right: 1.25rem;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 2.5rem 1.5rem;
+    border-radius: 1.5rem;
+    border: 1px solid rgba(139, 35, 35, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    gap: 1.5rem;
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1001;
+    display: flex; /* Override display: none */
+  }
+
+  .navbar__menu--open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .navbar__menu a {
+    font-size: 1.1rem;
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem;
   }
 
   .navbar__cart {
@@ -142,6 +173,23 @@
   .navbar__toggle {
     display: inline-flex;
   }
+}
+
+.navbar__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(48, 24, 18, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+  z-index: 999;
+}
+
+.navbar__overlay--open {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 @media (max-width: 600px) {

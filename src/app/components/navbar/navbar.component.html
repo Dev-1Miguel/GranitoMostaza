@@ -7,10 +7,10 @@
         class="navbar__logo-img"
       />
     </a>
-    <ul class="navbar__menu">
-      <li><a href="#home">Inicio</a></li>
-      <li><a [routerLink]="['/menu']">Menu</a></li>
-      <li><a href="#ubicacion">Ubicación</a></li>
+    <ul class="navbar__menu" [class.navbar__menu--open]="isMenuOpen">
+      <li><a href="#home" (click)="closeMenu()">Inicio</a></li>
+      <li><a [routerLink]="['/menu']" (click)="closeMenu()">Menu</a></li>
+      <li><a href="#ubicacion" (click)="closeMenu()">Ubicación</a></li>
     </ul>
 
     <div class="navbar__actions">
@@ -22,6 +22,11 @@
         </span>
       </button>
 
+      <button (click)="toggleMenu()" class="navbar__toggle" type="button" [attr.aria-expanded]="isMenuOpen">
+        <i class="pi" [ngClass]="isMenuOpen ? 'pi-times' : 'pi-bars'" aria-hidden="true"></i>
+      </button>
     </div>
+
+    <div class="navbar__overlay" [class.navbar__overlay--open]="isMenuOpen" (click)="closeMenu()"></div>
   </nav>
 </header>
