@@ -157,7 +157,8 @@
 
 @media (max-width: 980px) {
   .main-section {
-    padding-top: 140px;
+    padding-top: 160px;
+    padding-bottom: 60px;
   }
 
   .main-section__shape:nth-child(n + 9) {
