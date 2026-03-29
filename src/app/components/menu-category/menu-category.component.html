@@ -50,23 +50,13 @@
     </svg>
   </div>
 
-  <div class="relative mt-6">
-    <button
-      type="button"
-      (click)="scroll('left')"
-      class="absolute left-2 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-[#d8c1af] bg-white text-xl text-[#6d3b47] shadow-md transition hover:bg-[#f7efe6] md:hidden"
-      [attr.aria-label]="'Desplazar ' + title + ' a la izquierda'"
-    >
-      ‹
-    </button>
-
+  <div class="mt-8">
     <div
-      #track
-      class="flex gap-6 overflow-x-auto pb-8 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-2 md:overflow-visible lg:grid-cols-3 xl:grid-cols-4"
+      class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5"
     >
       <article
-        *ngFor="let item of items; trackBy: trackById"
-        class="flex min-w-[280px] max-w-[280px] shrink-0 snap-start flex-col rounded-[28px] border border-[#e9ddd0] bg-white shadow-md sm:min-w-[300px] sm:max-w-[300px]"
+        *ngFor="let item of items | slice:0:5; trackBy: trackById"
+        class="flex flex-col rounded-[28px] border border-[#e9ddd0] bg-white shadow-md transition-shadow hover:shadow-lg"
       >
         <div class="h-52 w-full overflow-hidden rounded-t-[28px] bg-[#f8f1e7]">
           <img
@@ -85,7 +75,7 @@
             <span
               class="whitespace-nowrap rounded-full bg-[#f4e6d8] px-3 py-1 text-sm font-semibold text-[#6d3b47]"
             >
-              $ {{ item.price }}
+              $ {{ item.price | number:'1.2-2' }}
             </span>
           </div>
 
@@ -110,14 +100,5 @@
         </div>
       </article>
     </div>
-
-    <button
-      type="button"
-      (click)="scroll('right')"
-      class="absolute right-2 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-[#d8c1af] bg-white text-xl text-[#6d3b47] shadow-md transition hover:bg-[#f7efe6] md:hidden"
-      [attr.aria-label]="'Desplazar ' + title + ' a la derecha'"
-    >
-      ›
-    </button>
   </div>
 </div>

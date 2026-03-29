@@ -167,11 +167,33 @@
   }
 
   .navbar__cart {
-    display: none;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: 0.8rem;
+    display: flex; /* Asegurar centrado */
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar__cart-icon {
+    font-size: 1.1rem; /* Aumentar un poco para que iguale visualmente al de menú */
+  }
+
+  .navbar__cart span:not(.absolute) {
+    display: none; /* Ocultar el texto "Carrito" en móvil */
   }
 
   .navbar__toggle {
-    display: inline-flex;
+    display: flex;
+    width: 44px;
+    height: 44px;
+    border-radius: 0.8rem;
+    font-size: 1.1rem; /* Tamaño de icono consistente */
+  }
+
+  .navbar__actions {
+    gap: 0.5rem; /* Espacio reducido entre botones en móvil */
   }
 }
 

@@ -21,6 +21,9 @@ export class SecondarySectionMenuComponent implements OnInit {
   itemsToShow = signal<number>(10); // Initially show 10 items (2 full rows of 5)
 
   ngOnInit(): void {
+    const isMobile = window.innerWidth < 640;
+    this.itemsToShow.set(isMobile ? 5 : 10);
+
     this.http.get<{ postres: Product[] }>(this.dataUrl).subscribe({
       next: (data) => {
         this.allPostres.set(data.postres);

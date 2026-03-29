@@ -6,18 +6,7 @@
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.ken-burns {
-    animation: kenburns 20s ease infinite alternate;
-}
 
-@keyframes kenburns {
-    from {
-        transform: scale(1);
-    }
-    to {
-        transform: scale(1.15);
-    }
-}
 
 .carousel-slide {
     perspective: 1000px;
