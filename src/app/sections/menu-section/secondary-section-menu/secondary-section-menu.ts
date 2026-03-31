@@ -47,8 +47,19 @@ export class SecondarySectionMenuComponent implements OnInit {
   }
 
   onAddToCart(product: Product): void {
+    this.incrementQuantity(product);
+  }
+
+  incrementQuantity(product: Product): void {
     this.cartService.addToCart(product);
     this.triggerAnimation(product.id);
+  }
+
+  decrementQuantity(product: Product): void {
+    const qty = this.getQuantity(product.id);
+    if (qty > 0) {
+      this.cartService.updateQuantity(product.id, qty - 1);
+    }
   }
 
   getQuantity(productId: number): number {

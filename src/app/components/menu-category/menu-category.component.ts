@@ -44,6 +44,10 @@ export class MenuCategoryComponent {
   }
 
   addToCart(item: Product): void {
+    this.incrementQuantity(item);
+  }
+
+  incrementQuantity(item: Product): void {
     this.itemAdded.emit(item);
     
     // Trigger local animation
@@ -51,6 +55,13 @@ export class MenuCategoryComponent {
     setTimeout(() => {
       this.animatingItems.delete(item.id);
     }, 500);
+  }
+
+  decrementQuantity(item: Product): void {
+    const currentQty = this.getQuantity(item.id);
+    if (currentQty > 0) {
+      this.cartService.updateQuantity(item.id, currentQty - 1);
+    }
   }
 
   isAnimating(itemId: number): boolean {
