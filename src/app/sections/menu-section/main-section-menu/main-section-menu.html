@@ -1,13 +1,19 @@
-<div class="carousel-container relative mx-auto w-full max-w-[90rem] overflow-hidden rounded-3xl bg-neutral-900 shadow-2xl">
-  <!-- Slides Wrap -->
+<div
+  class="carousel-container relative mx-auto w-full max-w-[90rem] overflow-hidden rounded-[2rem] bg-neutral-950 shadow-2xl"
+  (touchstart)="onTouchStart($event)"
+  (touchmove)="onTouchMove($event)"
+  (touchend)="onTouchEnd()"
+  (touchcancel)="onTouchEnd()"
+  aria-roledescription="carousel"
+  aria-label="Promociones destacadas del menu"
+>
   <div
-    class="carousel-track flex transition-transform duration-1600"
+    class="carousel-track flex transition-transform duration-[1200ms]"
     [style.transform]="translateX()"
   >
     @for (item of items(); track item.id; let i = $index) {
       <div class="carousel-slide relative w-full shrink-0 overflow-hidden">
-        <!-- Premium Image with Ken Burns Effect -->
-        <div class="image-wrapper aspect-video w-full overflow-hidden bg-neutral-900">
+        <div class="image-wrapper aspect-[5/6] w-full overflow-hidden bg-neutral-950 sm:aspect-[16/9]">
           <img
             [src]="item.image"
             [alt]="item.title"
@@ -15,34 +21,62 @@
           />
         </div>
 
-        <!-- Sophisticated Gradient Overlay -->
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
-
-        <!-- Content with Glassmorphic feel -->
-        <div class="absolute bottom-0 left-0 w-full p-8 md:p-12 text-white">
-          <div class="content-fade max-w-2xl transform transition-all duration-700 delay-300"
-               [style.transform]="currentIndex() === i ? 'translateY(0)' : 'translateY(40px)'"
-               [style.opacity]="currentIndex() === i ? '1' : '0'">
-            <span class="mb-2 block text-sm font-bold uppercase tracking-wider text-amber-400">
-              Destacado
-            </span>
-            <h2 class="text-3xl font-extrabold md:text-6xl mb-4 leading-tight">
-              {{ item.title }}
-            </h2>
-            <p class="text-lg md:text-xl text-gray-200 line-clamp-2 font-light">
-              {{ item.description }}
-            </p>
-          </div>
-        </div>
+        <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,10,10,0.22)_0%,rgba(10,10,10,0.48)_32%,rgba(10,10,10,0.82)_100%)]"></div>
+        <div class="absolute inset-0 bg-black/18"></div>
       </div>
     } @empty {
       <div class="flex h-[400px] w-full items-center justify-center text-white md:h-[550px]">
         <div class="text-center">
-          <i class="pi pi-spinner pi-spin text-4xl mb-4 opacity-50"></i>
+          <i class="pi pi-spinner pi-spin mb-4 text-4xl opacity-50"></i>
           <p class="text-xl">Cargando sugerencias...</p>
         </div>
       </div>
     }
+  </div>
+
+  <div class="pointer-events-none absolute inset-x-0 bottom-0 z-10 px-4 pb-4 text-white sm:px-8 sm:pb-8 md:px-12 md:pb-10">
+    <div class="content-stack mx-auto flex w-full max-w-[90rem] flex-col items-center gap-3 sm:items-start sm:gap-4">
+      @for (item of items(); track item.id) {
+        @if (currentIndex() === $index) {
+          <div
+            class="content-fade pointer-events-auto w-full max-w-[19.75rem] rounded-[1.45rem] border border-white/12 bg-[linear-gradient(180deg,rgba(34,32,32,0.76)_0%,rgba(18,18,18,0.72)_100%)] px-4 py-3 shadow-[0_18px_42px_rgba(0,0,0,0.22)] backdrop-blur-[14px] sm:max-w-[28rem] sm:rounded-[1.7rem] sm:px-5 sm:py-4 md:max-w-[34rem] md:px-6 md:py-5"
+          >
+            <div class="mb-2.5 flex items-center justify-between gap-3 sm:mb-3">
+              <span class="inline-flex rounded-full border border-white/15 bg-white/8 px-3 py-1 text-[0.64rem] font-semibold uppercase tracking-[0.24em] text-amber-300 sm:text-[0.68rem]">
+                Destacado
+              </span>
+              <span class="swipe-hint inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-black/22 px-2.5 py-1 text-[0.72rem] font-medium text-white/78 sm:hidden">
+                <span class="text-xs" aria-hidden="true">&#8596;</span>
+                Desliza
+              </span>
+            </div>
+
+            <h2 class="text-balance text-[2rem] font-extrabold leading-[0.96] tracking-[-0.04em] text-white drop-shadow-[0_2px_16px_rgba(0,0,0,0.42)] sm:text-[2.6rem] md:text-[3.4rem]">
+              {{ item.title }}
+            </h2>
+
+            <p class="mt-2 text-[0.96rem] leading-[1.42] text-white/84 sm:mt-3 sm:max-w-[24rem] sm:text-[1rem] sm:leading-6 md:max-w-[28rem] md:text-[1.05rem]">
+              {{ item.description }}
+            </p>
+          </div>
+        }
+      }
+
+      <div class="pointer-events-auto dots-shell flex items-center justify-center rounded-full border border-white/10 bg-black/28 px-3 py-2 shadow-[0_12px_26px_rgba(0,0,0,0.18)] backdrop-blur-md sm:ml-4">
+        @for (item of items(); track item.id; let i = $index) {
+          <button
+            type="button"
+            (click)="goTo(i)"
+            class="carousel-dot rounded-full transition-all duration-500"
+            [class.active-dot]="currentIndex() === i"
+            [class.inactive-dot]="currentIndex() !== i"
+            [attr.aria-label]="'Ir al slide ' + (i + 1) + ': ' + item.title"
+            [attr.aria-current]="currentIndex() === i ? 'true' : null"
+            [title]="item.title"
+          ></button>
+        }
+      </div>
+    </div>
   </div>
 
   <!-- Navigation Controls -->
@@ -51,34 +85,21 @@
       <button
         type="button"
         (click)="prev(); $event.stopPropagation()"
-        class="nav-btn absolute left-6 top-1/2 -translate-y-1/2 hidden md:flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-md transition-all hover:bg-white/20 active:scale-95 border border-white/20"
+        class="nav-btn absolute left-6 top-1/2 z-10 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-md transition-all hover:bg-white/20 active:scale-95 md:flex"
         aria-label="Anterior"
       >
-        <span class="text-2xl">‹</span>
+        <span aria-hidden="true" class="text-2xl leading-none">&lsaquo;</span>
       </button>
 
       <button
         type="button"
         (click)="next(); $event.stopPropagation()"
-        class="nav-btn absolute right-6 top-1/2 -translate-y-1/2 hidden md:flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-md transition-all hover:bg-white/20 active:scale-95 border border-white/20"
+        class="nav-btn absolute right-6 top-1/2 z-10 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-md transition-all hover:bg-white/20 active:scale-95 md:flex"
         aria-label="Siguiente"
       >
-        <span class="text-2xl">›</span>
+        <span aria-hidden="true" class="text-2xl leading-none">&rsaquo;</span>
       </button>
 
-      <!-- Premium Pagination Dots -->
-      <div class="absolute bottom-8 left-1/2 flex -translate-x-1/2 gap-3 p-2 rounded-full bg-black/20 backdrop-blur-sm border border-white/10">
-        @for (item of items(); track item.id; let i = $index) {
-          <button
-            type="button"
-            (click)="goTo(i)"
-            class="h-2 rounded-full transition-all duration-300"
-            [class.active-dot]="currentIndex() === i"
-            [class.inactive-dot]="currentIndex() !== i"
-            [title]="item.title"
-          ></button>
-        }
-      </div>
     </div>
   }
 </div>

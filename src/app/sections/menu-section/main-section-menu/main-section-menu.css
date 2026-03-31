@@ -1,14 +1,11 @@
 .carousel-container {
     mask-image: linear-gradient(to right, transparent, black 1%, black 99%, transparent);
+    touch-action: pan-y;
 }
 
 .carousel-track {
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
-
-
-
-
 
 .nav-btn:hover {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
@@ -16,18 +13,96 @@
 
 .image-wrapper img {
     will-change: transform;
+    transform: scale(1.03);
+}
+
+.carousel-dot {
+    height: 0.45rem;
+    min-width: 0.45rem;
 }
 
 .active-dot {
-    width: 2rem; /* 32px */
-    background-color: #f59e0b; /* amber-500 */
+    width: 1.65rem;
+    background: linear-gradient(90deg, #f6d7a8 0%, #f59e0b 100%);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.16), 0 6px 18px rgba(245, 158, 11, 0.28);
 }
 
 .inactive-dot {
-    width: 0.5rem; /* 8px */
-    background-color: rgba(255, 255, 255, 0.4);
+    width: 0.45rem;
+    background-color: rgba(255, 255, 255, 0.38);
 }
 
 .content-fade {
-    will-change: transform, opacity;
+    will-change: transform, opacity, filter;
+    animation: contentReveal 680ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.swipe-hint {
+    animation: swipePulse 1.8s ease-in-out infinite;
+}
+
+.content-stack {
+    padding-inline: 0.1rem;
+}
+
+.dots-shell {
+    gap: 0.45rem;
+}
+
+@keyframes contentReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(14px);
+        filter: blur(8px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes swipePulse {
+    0%,
+    100% {
+        transform: translateX(0);
+        opacity: 0.75;
+    }
+    50% {
+        transform: translateX(4px);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 640px) {
+    .carousel-container {
+        mask-image: none;
+    }
+
+    .image-wrapper img {
+        transform: scale(1.08);
+    }
+
+    .carousel-dot {
+        height: 0.42rem;
+        min-width: 0.42rem;
+    }
+
+    .active-dot {
+        width: 1.5rem;
+    }
+
+    .dots-shell {
+        gap: 0.4rem;
+        padding-inline: 0.8rem;
+        padding-block: 0.55rem;
+    }
+
+    .content-stack {
+        align-items: center;
+    }
+
+    .content-fade {
+        margin-inline: auto;
+    }
 }
