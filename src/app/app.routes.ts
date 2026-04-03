@@ -19,6 +19,13 @@ export const routes: Routes = [
             import('./pages/shopping-cart-landing/shopping-cart-landing.component').then(
                 (m) => m.ShoppingCartLandingComponent
             )
+    },
+    {
+        path: 'login-landing',
+        loadComponent: () =>
+            import('./pages/login-landing/login-landing.component').then(
+                (m) => m.LoginLandingComponent
+            )
     }
 
 ];
