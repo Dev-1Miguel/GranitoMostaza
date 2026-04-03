@@ -14,14 +14,14 @@
     <app-menu-category
       class="mb-14 block"
       title="Postres"
-      [items]="postres"
+      [items]="postres()"
       (itemAdded)="addToCart($event)"
     ></app-menu-category>
 
     <app-menu-category
       class="block"
       title="Desayunos"
-      [items]="desayunos"
+      [items]="desayunos()"
       (itemAdded)="addToCart($event)"
     ></app-menu-category>
   </div>

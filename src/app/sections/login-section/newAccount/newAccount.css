@@ -1,0 +1,21 @@
+.register-input:focus {
+  border-color: #8b2323;
+  box-shadow: 0 0 0 2px rgb(139 35 35 / 0.15);
+}
+
+.register-checkbox:checked {
+  background-color: #8b2323;
+  border-color: #8b2323;
+}
+
+.register-checkbox:focus {
+  box-shadow: 0 0 0 1px rgb(139 35 35 / 0.3);
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}
+
+.register-primary-button:hover {
+  background-color: #6d1b1b;
+}

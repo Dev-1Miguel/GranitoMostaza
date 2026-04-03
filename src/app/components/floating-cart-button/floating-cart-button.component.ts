@@ -1,13 +1,14 @@
-import { CommonModule } from '@angular/common';
-import { Component, HostListener, inject } from '@angular/core';
-import { CartService } from '../../services/cart.service';
+import { CommonModule } from "@angular/common";
+import { ChangeDetectionStrategy, Component, HostListener, inject } from "@angular/core";
+import { CartService } from "../../services/cart.service";
 
 @Component({
-  selector: 'app-floating-cart-button',
+  selector: "app-floating-cart-button",
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './floating-cart-button.component.html',
-  styleUrl: './floating-cart-button.component.css',
+  templateUrl: "./floating-cart-button.component.html",
+  styleUrl: "./floating-cart-button.component.css",
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FloatingCartButtonComponent {
   public cartService = inject(CartService);

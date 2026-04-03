@@ -1,4 +1,4 @@
-import { Component, inject } from "@angular/core";
+import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
@@ -9,7 +9,8 @@ import { CartService } from "../../services/cart.service";
     templateUrl: './cart-main-section.html',
     styleUrls: ['./cart-main-section.css'],
     standalone: true,
-    imports: [CommonModule, FormsModule, RouterModule]
+    imports: [CommonModule, FormsModule, RouterModule],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CartMainSection {
     private cartService = inject(CartService);

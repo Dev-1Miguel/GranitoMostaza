@@ -1,4 +1,4 @@
-import { Component, inject } from "@angular/core";
+import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 import { CartService } from "../../services/cart.service";
@@ -8,7 +8,8 @@ import { CartService } from "../../services/cart.service";
     templateUrl: './navbar.component.html',
     styleUrl: './navbar.component.css',
     imports: [CommonModule, RouterModule],
-    standalone: true
+    standalone: true,
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarComponent {
     private cartService = inject(CartService);
