@@ -26,6 +26,13 @@ export const routes: Routes = [
             import('./pages/login-landing/login-landing.component').then(
                 (m) => m.LoginLandingComponent
             )
+    },
+    {
+        path: 'register',
+        loadComponent: () =>
+            import('./sections/login-section/newAccount/newAccount').then(
+                (m) => m.NewAccount
+            )
     }
 
 ];
