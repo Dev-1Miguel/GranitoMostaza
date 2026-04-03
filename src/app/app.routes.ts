@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { HomeLandingComponent } from './pages/home-landing/home-landing.component';
+import { HomeLandingComponent } from './features/home/pages/home-landing/home-landing.component';
 
 export const routes: Routes = [
     {
@@ -9,28 +9,28 @@ export const routes: Routes = [
     {
         path: 'menu',
         loadComponent: () =>
-            import('./pages/menu-landing/menu-landing.component').then(
+            import('./features/menu/pages/menu-landing/menu-landing.component').then(
                 (m) => m.MenuLandingComponent
             )
     },
     {
         path: 'shopping-cart-landing',
         loadComponent: () =>
-            import('./pages/shopping-cart-landing/shopping-cart-landing.component').then(
+            import('./features/cart/pages/shopping-cart-landing/shopping-cart-landing.component').then(
                 (m) => m.ShoppingCartLandingComponent
             )
     },
     {
         path: 'login-landing',
         loadComponent: () =>
-            import('./pages/login-landing/login-landing.component').then(
+            import('./features/auth/pages/login-landing/login-landing.component').then(
                 (m) => m.LoginLandingComponent
             )
     },
     {
         path: 'register',
         loadComponent: () =>
-            import('./sections/login-section/newAccount/newAccount').then(
+            import('./features/auth/sections/newAccount/newAccount').then(
                 (m) => m.NewAccount
             )
     }

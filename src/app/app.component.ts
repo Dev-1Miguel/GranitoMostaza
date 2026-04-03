@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
 import { CommonModule } from "@angular/common";
-import { CartMainSection } from "./sections/shopping-cart-section/cart-main-section";
-import { CartService } from "./services/cart.service";
-import { FloatingCartButtonComponent } from "./components/floating-cart-button/floating-cart-button.component";
+import { CartMainSection } from "./features/cart/sections/cart-main-section";
+import { CartService } from "./features/cart/services/cart.service";
+import { FloatingCartButtonComponent } from "./shared/components/floating-cart-button/floating-cart-button.component";
 
 @Component({
   selector: "app-root",
