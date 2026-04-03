@@ -1,0 +1,113 @@
+<div class="m-0 h-screen w-full overflow-hidden bg-[#F5EEDC] flex items-center justify-center p-4">
+  <div class="w-full max-w-5xl rounded-[32px] bg-[#C48B8B]/20 p-3 shadow-sm flex max-h-full">
+    <div class="flex-1 grid grid-cols-1 gap-6 rounded-[24px] bg-white p-4 lg:grid-cols-[0.95fr_1.05fr] lg:p-6 max-h-full overflow-y-auto custom-scrollbar">
+
+      <!-- Left form -->
+      <div class="flex items-center justify-center">
+        <div class="w-full max-w-[470px]">
+
+          <div class="mb-6 text-center">
+            <h1 class="text-[36px] font-semibold leading-tight tracking-[-0.03em] text-[#8B2323]">
+              Crear una cuenta
+            </h1>
+            <p class="mt-2 text-[15px] text-[#9b9b9b]">
+              Ingresa tus datos para registrarte
+            </p>
+          </div>
+
+          <form class="space-y-4">
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="mb-1 block text-[14px] font-medium text-[#7b7b7b]">Nombre</label>
+                <input
+                  type="text"
+                  placeholder="Tu nombre"
+                  class="h-12 w-full rounded-full border border-[#e6e6e6] bg-white px-5 text-[15px] outline-none transition focus:border-[#8B2323] focus:ring-2 focus:ring-[#8B2323]/15"
+                />
+              </div>
+              <div>
+                <label class="mb-1 block text-[14px] font-medium text-[#7b7b7b]">Apellido</label>
+                <input
+                  type="text"
+                  placeholder="Tu apellido"
+                  class="h-12 w-full rounded-full border border-[#e6e6e6] bg-white px-5 text-[15px] outline-none transition focus:border-[#8B2323] focus:ring-2 focus:ring-[#8B2323]/15"
+                />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="mb-1 block text-[14px] font-medium text-[#7b7b7b]">Email</label>
+                <input
+                  type="email"
+                  placeholder="Tu email"
+                  class="h-12 w-full rounded-full border border-[#e6e6e6] bg-white px-5 text-[15px] outline-none transition focus:border-[#8B2323] focus:ring-2 focus:ring-[#8B2323]/15"
+                />
+              </div>
+              <div>
+                <label class="mb-1 block text-[14px] font-medium text-[#7b7b7b]">Teléfono</label>
+                <input
+                  type="tel"
+                  placeholder="Tu teléfono"
+                  class="h-12 w-full rounded-full border border-[#e6e6e6] bg-white px-5 text-[15px] outline-none transition focus:border-[#8B2323] focus:ring-2 focus:ring-[#8B2323]/15"
+                />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="mb-1 block text-[14px] font-medium text-[#7b7b7b]">Contraseña</label>
+                <input
+                  type="password"
+                  placeholder="Contraseña"
+                  class="h-12 w-full rounded-full border border-[#e6e6e6] bg-white px-5 text-[15px] outline-none transition focus:border-[#8B2323] focus:ring-2 focus:ring-[#8B2323]/15"
+                />
+              </div>
+              <div>
+                <label class="mb-1 block text-[14px] font-medium text-[#7b7b7b]">Confirmar contraseña</label>
+                <input
+                  type="password"
+                  placeholder="Confirma"
+                  class="h-12 w-full rounded-full border border-[#e6e6e6] bg-white px-5 text-[15px] outline-none transition focus:border-[#8B2323] focus:ring-2 focus:ring-[#8B2323]/15"
+                />
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-3 pt-2 text-[14px]">
+              <label class="flex items-center gap-2 text-[#8a8a8a] cursor-pointer">
+                <input type="checkbox" class="h-4 w-4 appearance-none rounded-[4px] border border-[#cfcfcf] checked:bg-[#8B2323] checked:border-[#8B2323] focus:ring-1 focus:ring-[#8B2323]/30 cursor-pointer" />
+                <span>Acepto términos y condiciones</span>
+              </label>
+
+              <label class="flex items-center gap-2 text-[#8a8a8a] cursor-pointer">
+                <input type="checkbox" class="h-4 w-4 appearance-none rounded-[4px] border border-[#cfcfcf] checked:bg-[#8B2323] checked:border-[#8B2323] focus:ring-1 focus:ring-[#8B2323]/30 cursor-pointer" />
+                <span>Quiero recibir promociones (Opcional)</span>
+              </label>
+            </div>
+
+            <button
+              type="submit"
+              class="mt-4 h-12 w-full rounded-full bg-[#8B2323] text-[18px] font-semibold text-white transition hover:bg-[#6D1B1B]"
+            >
+              Registrar cuenta
+            </button>
+          </form>
+
+          <p class="mt-6 text-center text-[15px] text-[#8d8d8d]">
+            ¿Ya tienes cuenta?
+            <a routerLink="/login-landing" class="font-medium text-[#8B2323] hover:underline">Inicia sesión</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Right visual (empty) -->
+      <div class="hidden lg:block relative w-full h-full min-h-[400px]">
+        <div class="absolute inset-0 rounded-[20px] overflow-hidden bg-[#d9d3cc]">
+          <img src="assets/images/ads/Creacion.jpg" alt="Plant" class="w-full h-full object-cover">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<app-floating-back-button></app-floating-back-button>

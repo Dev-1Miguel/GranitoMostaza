@@ -1,0 +1,11 @@
+<button
+  *ngIf="isVisible"
+  type="button"
+  class="floating-cart-button"
+  (click)="openCart()"
+  aria-label="Ver carrito"
+  title="Ver carrito"
+>
+  <i class="pi pi-shopping-cart"></i>
+  <span class="cart-badge">{{ cartService.totalItems() }}</span>
+</button>
