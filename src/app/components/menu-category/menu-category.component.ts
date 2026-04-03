@@ -1,5 +1,6 @@
 import { CommonModule } from "@angular/common";
 import {
+  ChangeDetectionStrategy,
   Component,
   ElementRef,
   EventEmitter,
@@ -17,6 +18,7 @@ import { CartService } from "../../services/cart.service";
   imports: [CommonModule],
   templateUrl: "./menu-category.component.html",
   styleUrls: ["./menu-category.component.css"],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MenuCategoryComponent {
   @Input() title = "";
@@ -27,8 +29,7 @@ export class MenuCategoryComponent {
   private cartService = inject(CartService);
 
   @ViewChild("track", { static: false }) trackRef!: ElementRef<HTMLDivElement>;
-
-  animatingItems = new Set<number>();
+  readonly quantityMap = this.cartService.quantityMap;
 
   scroll(direction: "left" | "right"): void {
     if (!this.trackRef?.nativeElement) return;
@@ -43,18 +44,8 @@ export class MenuCategoryComponent {
     return this.cartService.getItemQuantity(productId);
   }
 
-  addToCart(item: Product): void {
-    this.incrementQuantity(item);
-  }
-
   incrementQuantity(item: Product): void {
     this.itemAdded.emit(item);
-    
-    // Trigger local animation
-    this.animatingItems.add(item.id);
-    setTimeout(() => {
-      this.animatingItems.delete(item.id);
-    }, 500);
   }
 
   decrementQuantity(item: Product): void {
@@ -63,11 +54,6 @@ export class MenuCategoryComponent {
       this.cartService.updateQuantity(item.id, currentQty - 1);
     }
   }
-
-  isAnimating(itemId: number): boolean {
-    return this.animatingItems.has(itemId);
-  }
-
   trackById(index: number, item: Product): number {
     return item.id;
   }

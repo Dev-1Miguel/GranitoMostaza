@@ -40,3 +40,15 @@ body {
 .animate-bump {
   animation: bump 0.4s ease-out;
 }
+
+.stack-3 > * + * {
+  margin-top: 0.75rem;
+}
+
+.stack-4 > * + * {
+  margin-top: 1rem;
+}
+
+.stack-5 > * + * {
+  margin-top: 1.25rem;
+}

@@ -1,23 +1,31 @@
-import { Injectable, signal, computed } from '@angular/core';
-import { Product, CartItem } from '../models/product.interfaces';
+import { Injectable, signal, computed } from "@angular/core";
+import { Product, CartItem } from "../models/product.interfaces";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class CartService {
   private cartItems = signal<CartItem[]>([]);
   isCartOpen = signal(false);
+  private readonly storageKey = "cartItems";
 
   // Selectors
   items = computed(() => this.cartItems());
-  totalItems = computed(() => this.cartItems().reduce((acc, item) => acc + item.quantity, 0));
-  subtotal = computed(() => this.cartItems().reduce((acc, item) => acc + (item.price * item.quantity), 0));
-  shipping = computed(() => this.subtotal() > 0 ? 5.00 : 0); // Fixed shipping of $5 if there are items
+  quantityMap = computed(
+    () => new Map(this.cartItems().map((item) => [item.id, item.quantity]))
+  );
+  totalItems = computed(() =>
+    this.cartItems().reduce((acc, item) => acc + item.quantity, 0)
+  );
+  subtotal = computed(() =>
+    this.cartItems().reduce((acc, item) => acc + item.price * item.quantity, 0)
+  );
+  shipping = computed(() => (this.subtotal() > 0 ? 5.0 : 0)); // Fixed shipping of $5 if there are items
   tax = computed(() => this.subtotal() * 0.15); // 15% tax
   total = computed(() => this.subtotal() + this.shipping() + this.tax());
 
   getItemQuantity(productId: number): number {
-    const item = this.cartItems().find(i => i.id === productId);
+    const item = this.cartItems().find((i) => i.id === productId);
     return item ? item.quantity : 0;
   }
 
@@ -26,19 +34,24 @@ export class CartService {
   }
 
   addToCart(product: Product): void {
-    const currentItems = this.cartItems();
-    const existingItem = currentItems.find(item => item.id === product.id);
+    this.cartItems.update((items) => {
+      const existingItem = items.find((item) => item.id === product.id);
 
-    if (existingItem) {
-      this.updateQuantity(product.id, existingItem.quantity + 1);
-    } else {
-      this.cartItems.update(items => [...items, { ...product, quantity: 1 }]);
-    }
+      if (!existingItem) {
+        return [...items, { ...product, quantity: 1 }];
+      }
+
+      return items.map((item) =>
+        item.id === product.id
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      );
+    });
     this.saveCart();
   }
 
   toggleCart(): void {
-    this.isCartOpen.update(v => !v);
+    this.isCartOpen.update((v) => !v);
   }
 
   openCart(): void {
@@ -50,7 +63,9 @@ export class CartService {
   }
 
   removeFromCart(productId: number): void {
-    this.cartItems.update(items => items.filter(item => item.id !== productId));
+    this.cartItems.update((items) =>
+      items.filter((item) => item.id !== productId)
+    );
     this.saveCart();
   }
 
@@ -60,8 +75,10 @@ export class CartService {
       return;
     }
 
-    this.cartItems.update(items =>
-      items.map(item => item.id === productId ? { ...item, quantity } : item)
+    this.cartItems.update((items) =>
+      items.map((item) =>
+        item.id === productId ? { ...item, quantity } : item
+      )
     );
     this.saveCart();
   }
@@ -72,16 +89,24 @@ export class CartService {
   }
 
   private saveCart(): void {
-    localStorage.setItem('cartItems', JSON.stringify(this.cartItems()));
+    if (typeof localStorage === "undefined") {
+      return;
+    }
+
+    localStorage.setItem(this.storageKey, JSON.stringify(this.cartItems()));
   }
 
   private loadCart(): void {
-    const savedCart = localStorage.getItem('cartItems');
+    if (typeof localStorage === "undefined") {
+      return;
+    }
+
+    const savedCart = localStorage.getItem(this.storageKey);
     if (savedCart) {
       try {
         this.cartItems.set(JSON.parse(savedCart));
       } catch (error) {
-        console.error('Error loading cart from localStorage', error);
+        console.error("Error loading cart from localStorage", error);
       }
     }
   }

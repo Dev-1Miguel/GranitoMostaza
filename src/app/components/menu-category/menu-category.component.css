@@ -16,3 +16,25 @@
 .animate-bump {
   animation: bump 0.4s ease-out;
 }
+
+.menu-card:hover {
+  box-shadow: var(--tw-shadow-color, rgb(0 0 0 / 0.1)) 0 10px 15px -3px,
+    var(--tw-shadow-color, rgb(0 0 0 / 0.1)) 0 4px 6px -4px;
+}
+
+.menu-card-image:hover {
+  transform: scale(1.05);
+}
+
+.menu-action-button:hover {
+  background-color: #5a2f3a;
+}
+
+.menu-action-button:active {
+  transform: scale(0.95);
+}
+
+.menu-action-minus:hover,
+.menu-action-button:hover .menu-action-plus {
+  background-color: rgb(255 255 255 / 0.2);
+}

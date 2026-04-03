@@ -17,6 +17,11 @@
           <img
             [src]="item.image"
             [alt]="item.title"
+            [attr.loading]="i === 0 ? 'eager' : 'lazy'"
+            [attr.fetchpriority]="i === 0 ? 'high' : 'low'"
+            decoding="async"
+            width="1600"
+            height="900"
             class="h-full w-full object-cover"
           />
         </div>
@@ -36,8 +41,7 @@
 
   <div class="pointer-events-none absolute inset-x-0 bottom-0 z-10 px-4 pb-4 text-white sm:px-8 sm:pb-8 md:px-12 md:pb-10">
     <div class="content-stack mx-auto flex w-full max-w-[90rem] flex-col items-center gap-3 sm:items-start sm:gap-4">
-      @for (item of items(); track item.id) {
-        @if (currentIndex() === $index) {
+      @if (activeItem(); as item) {
           <div
             class="content-fade pointer-events-auto w-full max-w-[19.75rem] rounded-[1.45rem] border border-white/12 bg-[linear-gradient(180deg,rgba(34,32,32,0.76)_0%,rgba(18,18,18,0.72)_100%)] px-4 py-3 shadow-[0_18px_42px_rgba(0,0,0,0.22)] backdrop-blur-[14px] sm:max-w-[28rem] sm:rounded-[1.7rem] sm:px-5 sm:py-4 md:max-w-[34rem] md:px-6 md:py-5"
           >
@@ -59,7 +63,6 @@
               {{ item.description }}
             </p>
           </div>
-        }
       }
 
       <div class="pointer-events-auto dots-shell flex items-center justify-center rounded-full border border-white/10 bg-black/28 px-3 py-2 shadow-[0_12px_26px_rgba(0,0,0,0.18)] backdrop-blur-md sm:ml-4">
@@ -85,7 +88,7 @@
       <button
         type="button"
         (click)="prev(); $event.stopPropagation()"
-        class="nav-btn absolute left-6 top-1/2 z-10 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-md transition-all hover:bg-white/20 active:scale-95 md:flex"
+        class="nav-btn nav-btn-interactive absolute left-6 top-1/2 z-10 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-md transition-all md:flex"
         aria-label="Anterior"
       >
         <span aria-hidden="true" class="text-2xl leading-none">&lsaquo;</span>
@@ -94,7 +97,7 @@
       <button
         type="button"
         (click)="next(); $event.stopPropagation()"
-        class="nav-btn absolute right-6 top-1/2 z-10 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-md transition-all hover:bg-white/20 active:scale-95 md:flex"
+        class="nav-btn nav-btn-interactive absolute right-6 top-1/2 z-10 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-md transition-all md:flex"
         aria-label="Siguiente"
       >
         <span aria-hidden="true" class="text-2xl leading-none">&rsaquo;</span>

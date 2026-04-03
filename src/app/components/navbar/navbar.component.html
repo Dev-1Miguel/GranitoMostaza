@@ -22,6 +22,11 @@
         </span>
       </button>
 
+      <a routerLink="/login-landing" class="navbar__cart" style="text-decoration: none; cursor: pointer;">
+        <i class="pi pi-user navbar__cart-icon" aria-hidden="true"></i>
+        <span>Iniciar Sesión</span>
+      </a>
+
       <button (click)="toggleMenu()" class="navbar__toggle" type="button" [attr.aria-expanded]="isMenuOpen">
         <i class="pi" [ngClass]="isMenuOpen ? 'pi-times' : 'pi-bars'" aria-hidden="true"></i>
       </button>

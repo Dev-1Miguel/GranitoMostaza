@@ -25,3 +25,37 @@ article:hover {
 button:active {
     transform: scale(0.98);
 }
+
+.menu-list-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+}
+
+.menu-list-card:hover .menu-list-card-image {
+    transform: scale(1.1);
+}
+
+.menu-list-card:hover .menu-list-card-title {
+    color: #8b4d5a;
+}
+
+.menu-list-action:hover {
+    background-color: #5a2f3a;
+}
+
+.menu-list-action:active {
+    transform: scale(0.95);
+}
+
+.menu-list-action-minus:hover,
+.menu-list-action:hover .menu-list-action-plus {
+    background-color: rgb(255 255 255 / 0.2);
+}
+
+.menu-list-more-button:hover {
+    color: #fff;
+}
+
+.menu-list-more-button:hover .menu-list-more-fill {
+    transform: translateY(0);
+}

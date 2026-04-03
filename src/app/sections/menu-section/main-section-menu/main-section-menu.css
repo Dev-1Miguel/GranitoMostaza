@@ -106,3 +106,10 @@
         margin-inline: auto;
     }
 }
+.nav-btn-interactive:hover {
+  background-color: rgb(255 255 255 / 0.2);
+}
+
+.nav-btn-interactive:active {
+  transform: translateY(-50%) scale(0.95);
+}
