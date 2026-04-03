@@ -1,0 +1,20 @@
+.login-input:focus {
+  border-color: #8b2323;
+  box-shadow: 0 0 0 2px rgb(139 35 35 / 0.15);
+}
+
+.login-checkbox:focus {
+  box-shadow: 0 0 0 2px rgb(139 35 35 / 0.3);
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
+.login-primary-button:hover {
+  background-color: #6d1b1b;
+}
+
+.login-social-button:hover {
+  background-color: #ebebef;
+}

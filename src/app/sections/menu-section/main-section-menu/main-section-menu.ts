@@ -1,5 +1,14 @@
 import { CommonModule } from "@angular/common";
-import { Component, OnDestroy, OnInit, inject, signal } from "@angular/core";
+import {
+  ChangeDetectionStrategy,
+  Component,
+  NgZone,
+  OnDestroy,
+  OnInit,
+  computed,
+  inject,
+  signal,
+} from "@angular/core";
 import { CarouselItem } from "./interfaces/carouselItem.interfaces";
 import { CarouselService } from "./services/carousel.service";
 
@@ -9,9 +18,11 @@ import { CarouselService } from "./services/carousel.service";
   imports: [CommonModule],
   templateUrl: "./main-section-menu.html",
   styleUrls: ["./main-section-menu.css"],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MainSectionMenuComponent implements OnInit, OnDestroy {
   private readonly carouselService = inject(CarouselService);
+  private readonly ngZone = inject(NgZone);
   private autoSlideInterval?: ReturnType<typeof setInterval>;
   private touchStartX: number | null = null;
   private touchCurrentX: number | null = null;
@@ -19,6 +30,8 @@ export class MainSectionMenuComponent implements OnInit, OnDestroy {
 
   items = signal<CarouselItem[]>([]);
   currentIndex = signal(0);
+  activeItem = computed(() => this.items()[this.currentIndex()] ?? null);
+  translateX = computed(() => `translateX(-${this.currentIndex() * 100}%)`);
   ngOnInit(): void {
     this.loadCarouselItems();
     this.startAutoSlide();
@@ -41,9 +54,12 @@ export class MainSectionMenuComponent implements OnInit, OnDestroy {
 
   startAutoSlide(): void {
     this.stopAutoSlide();
-    this.autoSlideInterval = setInterval(() => {
-      this.next();
-    }, 5000);
+
+    this.ngZone.runOutsideAngular(() => {
+      this.autoSlideInterval = setInterval(() => {
+        this.ngZone.run(() => this.next());
+      }, 5000);
+    });
   }
 
   stopAutoSlide(): void {
@@ -111,10 +127,6 @@ export class MainSectionMenuComponent implements OnInit, OnDestroy {
       behavior: "smooth",
       block: "start",
     });
-  }
-
-  translateX(): string {
-    return `translateX(-${this.currentIndex() * 100}%)`;
   }
 
   private getTargetSectionId(item: CarouselItem | null | undefined): string | null {
