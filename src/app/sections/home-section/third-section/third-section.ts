@@ -1,12 +1,15 @@
-import { Component, OnInit, inject } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+} from "@angular/core";
+import { toSignal } from "@angular/core/rxjs-interop";
 
 import { Product } from "../../../models/product.interfaces";
-import { MenuData } from "../../../models/menudata.interfaces";
 import { MenuCategoryComponent } from "../../../components/menu-category/menu-category.component";
 import { FadeInDirective } from "../../../directives/fade-in.directive";
 import { CartService } from "../../../services/cart.service";
+import { MenuDataService } from "../../../services/menu-data.service";
 
 @Component({
   selector: "app-third-section",
@@ -14,29 +17,18 @@ import { CartService } from "../../../services/cart.service";
   imports: [MenuCategoryComponent, FadeInDirective],
   templateUrl: "./third-section.html",
   styleUrls: ["./third-section.css"],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ThirdSectionComponent implements OnInit {
-  private http = inject(HttpClient);
-  private cartService = inject(CartService);
+export class ThirdSectionComponent {
+  private readonly cartService = inject(CartService);
+  private readonly menuDataService = inject(MenuDataService);
 
-  postres: Product[] = [];
-  desayunos: Product[] = [];
-
-  ngOnInit(): void {
-    this.getMenuData().subscribe({
-      next: (data) => {
-        this.postres = data.postres;
-        this.desayunos = data.desayunos;
-      },
-      error: (error) => {
-        console.error("Error al cargar menu.json:", error);
-      },
-    });
-  }
-
-  getMenuData(): Observable<MenuData> {
-    return this.http.get<MenuData>("assets/data/menu.json");
-  }
+  postres = toSignal(this.menuDataService.getCategoryItems("postres"), {
+    initialValue: [] as Product[],
+  });
+  desayunos = toSignal(this.menuDataService.getCategoryItems("desayunos"), {
+    initialValue: [] as Product[],
+  });
 
   addToCart(product: Product): void {
     this.cartService.addToCart(product);
