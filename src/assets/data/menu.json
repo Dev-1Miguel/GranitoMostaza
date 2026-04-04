@@ -5,140 +5,140 @@
         "name": "Tartaleta de frutos rojos",
         "description": "Base de masa sableé con crema pastelera y selección de berries frescos.",
         "price": 4.50,
-        "image": "assets/images/desserts/tartaletasFrutosRojos.jpg"
+        "image": "assets/images/desserts/tartaletasFrutosRojos.webp"
         },
         {
         "id": 2,
         "name": "Tartaleta de Kiwi y Mango",
         "description": "Combinación tropical refrescante sobre una delicada crema de vainilla.",
         "price": 5.00,
-        "image": "assets/images/desserts/tartaletasKiwiMango.jpg"
+        "image": "assets/images/desserts/tartaletasKiwiMango.webp"
         },
         {
         "id": 3,
         "name": "Tarta de Manzana Rústica",
         "description": "Clásica receta artesanal con manzanas caramelizadas y un toque de canela.",
         "price": 3.75,
-        "image": "assets/images/desserts/tartaManzanaRustica.jpg"
+        "image": "assets/images/desserts/tartaManzanaRustica.webp"
         },
         {
         "id": 4,
         "name": "Tarta de Zanahoria (Carrot Cake)",
         "description": "Bizcocho húmedo de especias y nueces con frosting de queso crema.",
         "price": 4.25,
-        "image": "assets/images/desserts/tartaZanahoria.jpg"
+        "image": "assets/images/desserts/tartaZanahoria.webp"
         },
         {
         "id": 5,
         "name": "Cheesecake de Maracuyá",
         "description": "Textura aterciopelada con el equilibrio perfecto entre dulce y cítrico.",
         "price": 4.50,
-        "image": "assets/images/desserts/cheesecakeMaracuya.jpg"
+        "image": "assets/images/desserts/cheesecakeMaracuya.webp"
         },
         {
         "id": 6,
         "name": "Brownie de Chocolate y Nueces",
         "description": "Intenso chocolate amargo con trozos de nuez, servido tibio.",
         "price": 4.25,
-        "image": "assets/images/desserts/brownieChocolateNueces.jpg"
+        "image": "assets/images/desserts/brownieChocolateNueces.webp"
         },
         {
         "id": 7,
         "name": "Tartaleta de Limón y Merengue",
         "description": "Crema de limón persistente coronada con merengue suizo tostado.",
         "price": 4.25,
-        "image": "assets/images/desserts/tartaletaLimonMerengue.jpg"
+        "image": "assets/images/desserts/tartaletaLimonMerengue.webp"
         },
         {
         "id": 8,
         "name": "Tartaleta de Dulce de Leche y Coco",
         "description": "Relleno generoso de dulce de leche con hilos de coco rallado.",
         "price": 4.25,
-        "image": "assets/images/desserts/tartaletaDulceLecheCoco.jpg"
+        "image": "assets/images/desserts/tartaletaDulceLecheCoco.webp"
         },
         {
         "id": 9,
         "name": "Croissant de Almendras",
         "description": "Hojaldre de mantequilla relleno de crema frangipane y almendras laminadas.",
         "price": 4.25,
-        "image": "assets/images/desserts/croissantAlmendras.jpg"
+        "image": "assets/images/desserts/croissantAlmendras.webp"
         },
         {
         "id": 10,
         "name": "Alfajores de Maicena",
         "description": "Tradicionales galletas de maicena que se deshacen en la boca, rellenas de manjar.",
         "price": 3.50,
-        "image": "assets/images/desserts/alfajoresMaicena.jpg"
+        "image": "assets/images/desserts/alfajoresMaicena.webp"
         },
         {
         "id": 11,
         "name": "Tiramisú Artesanal",
         "description": "Capas de bizcocho embebidas en café espresso y crema de mascarpone.",
         "price": 5.50,
-        "image": "assets/images/desserts/tiramisuArtesanal.jpg"
+        "image": "assets/images/desserts/tiramisuArtesanal.webp"
         },
         {
         "id": 12,
         "name": "Roll de Canela y Vainilla",
         "description": "Masa brioche esponjosa con canela de Ceilán y glaseado fluido.",
         "price": 3.90,
-        "image": "assets/images/desserts/rollCanelaVainilla.jpg"
+        "image": "assets/images/desserts/rollCanelaVainilla.webp"
         },
         {
         "id": 13,
         "name": "Mousse de Chocolate 70%",
         "description": "Copa de mousse ligera de chocolate oscuro con virutas de cacao.",
         "price": 4.75,
-        "image": "assets/images/desserts/mousseChocolate.jpg"
+        "image": "assets/images/desserts/mousseChocolate.webp"
         },
         {
         "id": 14,
         "name": "Budín de Limón y Semillas de Amapola",
         "description": "Bizcocho cítrico muy húmedo, ideal para acompañar un té o café.",
         "price": 3.25,
-        "image": "assets/images/desserts/budinLimonSemillasAmapola.jpg"
+        "image": "assets/images/desserts/budinLimonSemillasAmapola.webp"
         },
         {
         "id": 15,
         "name": "Éclair de Pistacho",
         "description": "Masa choux alargada rellena de crema de pistacho puro y cobertura fina.",
         "price": 4.80,
-        "image": "assets/images/desserts/eclairPistacho.jpg"
+        "image": "assets/images/desserts/eclairPistacho.webp"
         },
         {
         "id": 16,
         "name": "Red Velvet Cake",
         "description": "Pastel de color rojizo con un toque de cacao y suave crema de queso.",
         "price": 4.75,
-        "image": "assets/images/desserts/redVelvetCake.jpg"
+        "image": "assets/images/desserts/redVelvetCake.webp"
         },
         {
         "id": 17,
         "name": "Banoffee Pie",
         "description": "Base de galleta, plátano fresco, dulce de leche y nata montada.",
         "price": 4.60,
-        "image": "assets/images/desserts/banoffeePie.jpg"
+        "image": "assets/images/desserts/banoffeePie.webp"
         },
         {
         "id": 18,
         "name": "Macarons Surtidos (3 unid.)",
         "description": "Pequeños bocados de almendra con rellenos artesanales de temporada.",
         "price": 5.25,
-        "image": "assets/images/desserts/macaronsSurtidos.jpg"
+        "image": "assets/images/desserts/macaronsSurtidos.webp"
         },
         {
         "id": 19,
         "name": "Muffin de Arándanos",
         "description": "Esponjoso panecillo dulce cargado de arándanos frescos.",
         "price": 2.95,
-        "image": "assets/images/desserts/muffinArandanos.jpg"
+        "image": "assets/images/desserts/muffinArandanos.webp"
         },
         {
         "id": 20,
         "name": "Galleta de Chocolate Blanco y Macadamia",
         "description": "Cookie horneada con trozos grandes de chocolate y nueces de macadamia.",
         "price": 2.50,
-        "image": "assets/images/desserts/galletaChocolateBlancoMacadamia.jpg"
+        "image": "assets/images/desserts/galletaChocolateBlancoMacadamia.webp"
         }
     ],
 
@@ -148,91 +148,91 @@
         "name": "Toast de aguacate",
         "description": "Pan crujiente con aguacate fresco y topping especial.",
         "price": 5.50,
-        "image": "assets/images/breakfast/toastAguacate.jpg"
+        "image": "assets/images/breakfast/toastAguacate.webp"
         },
         {
         "id": 2,
         "name": "Waffles clásicos",
         "description": "Servidos con frutas frescas y un toque dulce equilibrado.",
         "price": 6.00,
-        "image": "assets/images/breakfast/wafflesClasicos.jpg"
+        "image": "assets/images/breakfast/wafflesClasicos.webp"
         },
         {
         "id": 3,
         "name": "Sándwich desayuno",
         "description": "Pan artesanal, huevo, queso y mezcla de sabores suaves.",
         "price": 5.75,
-        "image": "assets/images/breakfast/sandwichDesayuno.jpg"
+        "image": "assets/images/breakfast/sandwichDesayuno.webp"
         },
         {
         "id": 4,
         "name": "Bowl de yogur y frutas",
         "description": "Ligero, fresco y perfecto para comenzar la mañana.",
         "price": 4.90,
-        "image": "assets/images/breakfast/bowlYogurFrutas.jpg"
+        "image": "assets/images/breakfast/bowlYogurFrutas.webp"
         },
         {
         "id": 5,
         "name": "Encebollado de Albacora",
         "description": "El clásico revitalizante: caldo de pescado con yuca, cebolla curtida y cilantro.",
         "price": 6.50,
-        "image": "assets/images/breakfast/encebolladoAlbacora.jpg"
+        "image": "assets/images/breakfast/encebolladoAlbacora.webp"
         },
         {
         "id": 6,
         "name": "Bolón de Verde Mixto",
         "description": "Masa de plátano verde frito con chicharrón crocante y queso manabita.",
         "price": 4.50,
-        "image": "assets/images/breakfast/bolonVerdeMixto.jpg"
+        "image": "assets/images/breakfast/bolonVerdeMixto.webp"
         },
         {
         "id": 7,
         "name": "Tigrillo",
         "description": "Plátano verde majado con huevo, queso y un toque de refrito tradicional.",
         "price": 5.25,
-        "image": "assets/images/breakfast/tigrillo.jpg"
+        "image": "assets/images/breakfast/tigrillo.webp"
         },
         {
         "id": 8,
         "name": "Ceviche de Camarón",
         "description": "Camarones frescos marinados en jugo de limón, naranja y esencia de tomate.",
         "price": 8.00,
-        "image": "assets/images/breakfast/cevicheCamaron.jpg"
+        "image": "assets/images/breakfast/cevicheCamaron.webp"
         },
         {
         "id": 9,
         "name": "Muchines de Yuca",
         "description": "Croquetas de yuca rellenas de queso, doradas a la perfección.",
         "price": 3.50,
-        "image": "assets/images/breakfast/muchinesYuca.jpg"
+        "image": "assets/images/breakfast/muchinesYuca.webp"
         },
         {
         "id": 10,
         "name": "Corviche de Pescado",
         "description": "Masa de plátano verde con maní, rellena de estofado de pescado.",
         "price": 3.00,
-        "image": "assets/images/breakfast/corvichePescado.jpg"
+        "image": "assets/images/breakfast/corvichePescado.webp"
         },
         {
         "id": 11,
         "name": "Humita Costeña",
         "description": "Masa de maíz tierno molido con queso, cocida al vapor en su propia hoja.",
         "price": 2.50,
-        "image": "assets/images/breakfast/humitaCostena.jpg"
+        "image": "assets/images/breakfast/humitaCostena.webp"
         },
         {
         "id": 12,
         "name": "Tortilla de Maíz con Queso",
         "description": "Tortillas asadas a la plancha rellenas de abundante queso criollo.",
         "price": 2.75,
-        "image": "assets/images/breakfast/tortillaMaizQueso.jpg"
+        "image": "assets/images/breakfast/tortillaMaizQueso.webp"
         },
         {
         "id": 13,
         "name": "Empanada de Viento",
         "description": "Gran empanada frita rellena de queso y espolvoreada con un toque de azúcar.",
         "price": 2.00,
-        "image": "assets/images/breakfast/empanadaViento.jpg"
+        "image": "assets/images/breakfast/empanadaViento.webp"
         }
     ],
 
@@ -242,98 +242,98 @@
         "name": "Espresso Doble",
         "description": "Extracción intensa de granos de especialidad con notas a chocolate.",
         "price": 2.50,
-        "image": "assets/images/drinks/espressoDoble.jpg"
+        "image": "assets/images/drinks/espressoDoble.webp"
         },
         {
         "id": 2,
         "name": "Cappuccino de la Casa",
         "description": "Equilibrio perfecto entre espresso, leche vaporizada y espuma densa.",
         "price": 3.25,
-        "image": "assets/images/drinks/cappuccinoCasa.jpg"
+        "image": "assets/images/drinks/cappuccinoCasa.webp"
         },
         {
         "id": 3,
         "name": "Latte Art Vainilla",
         "description": "Suave café con leche y un toque de sirope artesanal de vainilla.",
         "price": 3.75,
-        "image": "assets/images/drinks/latteArtVainilla.jpg"
+        "image": "assets/images/drinks/latteArtVainilla.webp"
         },
         {
         "id": 4,
         "name": "Mocaccino Creativo",
         "description": "Mezcla de espresso, chocolate amargo y leche cremosa.",
         "price": 4.00,
-        "image": "assets/images/drinks/mocaccinoCreativo.jpg"
+        "image": "assets/images/drinks/mocaccinoCreativo.webp"
         },
         {
         "id": 5,
         "name": "Café de Pasar (Tinto)",
         "description": "Café filtrado tradicional, aromático y ligero para cualquier hora.",
         "price": 1.75,
-        "image": "assets/images/drinks/cafePasar.jpg"
+        "image": "assets/images/drinks/cafePasar.webp"
         },
         {
         "id": 6,
         "name": "Chocolate Caliente Ambateño",
         "description": "Chocolate de cacao puro servido con una rodaja de queso y pan.",
         "price": 3.50,
-        "image": "assets/images/drinks/chocolateCalienteAmbateno.jpg"
+        "image": "assets/images/drinks/chocolateCalienteAmbateno.webp"
         },
         {
         "id": 7,
         "name": "Morocho Dulce",
         "description": "Bebida espesa de maíz blanco, leche, canela y pasas.",
         "price": 2.50,
-        "image": "assets/images/drinks/morochoDulce.jpg"
+        "image": "assets/images/drinks/morochoDulce.webp"
         },
         {
         "id": 8,
         "name": "Colada de Avena con Naranjilla",
         "description": "Refrescante y tradicional 'Quaker' con pulpa de naranjilla natural.",
         "price": 2.00,
-        "image": "assets/images/drinks/coladaAvenaNaranjilla.jpg"
+        "image": "assets/images/drinks/coladaAvenaNaranjilla.webp"
         },
         {
         "id": 9,
         "name": "Jugos Naturales de Temporada",
         "description": "Fruta fresca recién exprimida (Mora, Guanábana o Tomate de Árbol).",
         "price": 2.75,
-        "image": "assets/images/drinks/jugosNaturalesTemporada.jpg"
+        "image": "assets/images/drinks/jugosNaturalesTemporada.webp"
         },
         {
         "id": 10,
         "name": "Limonada Imperial",
         "description": "Limonada frapeada con un toque de hierbabuena fresca.",
         "price": 3.00,
-        "image": "assets/images/drinks/limonadaImperial.jpg"
+        "image": "assets/images/drinks/limonadaImperial.webp"
         },
         {
         "id": 11,
         "name": "Té de Guayusa",
         "description": "Energizante natural de la Amazonía servido frío o caliente.",
         "price": 2.25,
-        "image": "assets/images/drinks/teGuayusa.jpg"
+        "image": "assets/images/drinks/teGuayusa.webp"
         },
         {
         "id": 12,
         "name": "Iced Coffee Caramelo",
         "description": "Café frío con hielo, leche y una cascada de caramelo salado.",
         "price": 4.25,
-        "image": "assets/images/drinks/icedCoffeeCaramelo.jpg"
+        "image": "assets/images/drinks/icedCoffeeCaramelo.webp"
         },
         {
         "id": 13,
         "name": "Cold Brew",
         "description": "Café macerado en frío por 18 horas para una baja acidez.",
         "price": 3.50,
-        "image": "assets/images/drinks/coldBrew.jpg"
+        "image": "assets/images/drinks/coldBrew.webp"
         },
         {
         "id": 14,
         "name": "Batido de Chocolate y Guineo",
         "description": "Cremoso batido con banano maduro y cacao fino de aroma.",
         "price": 3.80,
-        "image": "assets/images/drinks/batidoChocolateGuineo.jpg"
+        "image": "assets/images/drinks/batidoChocolateGuineo.webp"
         }
     ],
 
@@ -341,13 +341,13 @@
         {
             "id": 1,
             "title": "Plato del Día",
-            "image": "assets/images/ads/PromoDesayuno.jpg",
+            "image": "assets/images/ads/PromoDesayuno.webp",
             "description": "Plato del día"
         },
         {
             "id": 2,
             "title": "Nuestros Postres",
-            "image": "assets/images/ads/PromoPostre.jpg",
+            "image": "assets/images/ads/PromoPostre.webp",
             "description": "Descubre nuestra selección de postres artesanales"
         }
     ]
