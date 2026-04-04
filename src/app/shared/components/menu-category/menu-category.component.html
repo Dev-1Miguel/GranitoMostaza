@@ -108,8 +108,8 @@
 
             <!-- Texto Centro -->
             <span class="flex-1 text-center py-2 text-[0.95rem] font-semibold">
-              Agregar 
-              <span *ngIf="quantity > 0" class="ml-1 font-bold">
+              <ng-container *ngIf="quantity === 0">Comprar</ng-container>
+              <span *ngIf="quantity > 0" class="font-bold">
                 {{ quantity }}
               </span>
             </span>
